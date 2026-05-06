@@ -1,0 +1,69 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600,700&f[]=clash-display@400,500,600,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f8fafc;
+  --bg-soft: #eef2ff;
+  --panel: rgba(255, 255, 255, 0.75);
+  --line: rgba(148, 163, 184, 0.35);
+  --text: #0f172a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: #f8fafc;
+  color: var(--text);
+  cursor: default;
+}
+
+body {
+  margin: 0;
+  font-family: "General Sans", "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.aurora {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(239, 68, 68, 0.26), transparent 36%),
+    radial-gradient(circle at 80% 10%, rgba(220, 38, 38, 0.22), transparent 34%),
+    radial-gradient(circle at 50% 75%, rgba(127, 29, 29, 0.26), transparent 44%);
+}
+
+.glass {
+  backdrop-filter: blur(18px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65));
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 40px rgba(148, 163, 184, 0.22);
+}
+
+.noise {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.2) 0.7px, transparent 0.7px);
+  background-size: 2px 2px;
+}
+
+.font-display { font-family: "Clash Display", "Satoshi", "Inter", sans-serif; letter-spacing: -0.02em; }
+
+.cursor-glow {
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.26) 0%, rgba(239, 68, 68, 0) 70%);
+  filter: blur(8px);
+}
+
+.marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  html, body { cursor: default; }
+  .cursor-glow { display: none; }
+}
