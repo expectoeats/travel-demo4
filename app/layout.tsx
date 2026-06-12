@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ReferralBanner from "@/components/ReferralBanner";
 
 export const metadata: Metadata = {
   title: "FlyAnyTrip | Cinematic Luxury Travel",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}        <ReferralBanner />
+      </body>
     </html>
   );
 }
